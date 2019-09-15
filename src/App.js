@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-function App() {
+const App = () => {
+  const [quotes, setQuotes] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.whatdoestrumpthink.com/api/v1/quotes/personalized?q=Zac`
+      )
+      .then(response => {
+        console.log(response.data);
+        const item = response.data;
+        setQuotes(item);
+        console.log("item", item.message);
+      })
+      .catch(error => {
+        console.log("Could not load your data", error);
+      });
+  }, []);
+  console.log("quote", quotes.message);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>Trump says what?</h2>
+      <p>{quotes.message}</p>
     </div>
   );
-}
+};
 
 export default App;
