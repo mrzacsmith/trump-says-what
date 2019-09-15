@@ -3,11 +3,12 @@ import axios from "axios";
 
 const App = () => {
   const [quotes, setQuotes] = useState([]);
+  const [player, setPlayer] = useState("Fred");
 
   useEffect(() => {
     axios
       .get(
-        `https://api.whatdoestrumpthink.com/api/v1/quotes/personalized?q=Zac`
+        `https://api.whatdoestrumpthink.com/api/v1/quotes/personalized?q=${player}`
       )
       .then(response => {
         console.log(response.data);
