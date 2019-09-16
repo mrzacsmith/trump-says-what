@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import QuoteDisplay from "./components/QuoteDisplay.js";
 import Header from "./components/Header.js";
+import "./App.css";
 
 const App = () => {
   const [quotes, setQuotes] = useState([]);
@@ -24,7 +25,7 @@ const App = () => {
   }, []);
   // console.log("quote", quotes.message);
   return (
-    <div>
+    <div className="container">
       <Header name={player} />
       <QuoteDisplay quote={quotes.message} />
     </div>

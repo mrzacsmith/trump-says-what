@@ -4,7 +4,7 @@ const Header = props => {
   return (
     <header>
       <nav>
-        <p>User: {props.name}</p>
+        <p>Welcome, {props.name}!</p>
       </nav>
     </header>
   );

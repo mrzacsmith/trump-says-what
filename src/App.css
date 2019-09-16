@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+
+  width: 100%;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  background: url("./dt.png");
+  height: 98vh;
+}
+
+.quote-card {
+  background: rgb(230, 230, 200);
+  opacity: 0.3;
+  width: 400px;
+}
+.quote {
+  font-size: 3rem;
+  color: black;
+}
