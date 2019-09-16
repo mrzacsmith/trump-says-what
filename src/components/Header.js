@@ -18,7 +18,7 @@ const Header = ({ addPlayer, name, isReady }) => {
           placeholder="Enter your first name"
           onChange={e => setPlayerForm(e.target.value)}
         />
-        <input type="submit" value="Get Player" />
+        <input type="submit" value="Let's talk!" />
       </form>
     );
   };
