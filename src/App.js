@@ -7,6 +7,7 @@ import "./App.css";
 const App = () => {
   const [quotes, setQuotes] = useState([]);
   const [player, setPlayer] = useState("");
+  const [isReady, setIsReady] = useState(true);
 
   useEffect(() => {
     axios
@@ -17,6 +18,8 @@ const App = () => {
         // console.log(response.data);
         const item = response.data;
         setQuotes(item);
+        // Change isReady to true, display quote box and remove form
+
         // console.log("item", item.message);
       })
       .catch(error => {
@@ -29,11 +32,11 @@ const App = () => {
     setPlayer(player);
   };
 
-  console.log("player", player);
+  // console.log("player", player);
 
   return (
     <div className="container">
-      <Header name={player} addPlayer={addPlayer} />
+      <Header name={player} addPlayer={addPlayer} isReady={isReady} />
       <QuoteDisplay quote={quotes.message} />
     </div>
   );
