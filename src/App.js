@@ -22,7 +22,7 @@ const App = () => {
       .catch(error => {
         console.log("Could not load your data", error);
       });
-  }, []);
+  }, [player]);
   // console.log("quote", quotes.message);
 
   const addPlayer = player => {
