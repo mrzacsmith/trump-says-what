@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import GetPlayer from "./GetPlayer";
 
 const Header = ({ addPlayer, name, isReady }) => {
   const [playerForm, setPlayerForm] = useState("");
@@ -27,18 +26,7 @@ const Header = ({ addPlayer, name, isReady }) => {
   return (
     <header>
       <nav>
-        {isReady ? readyForm() : <p>Trash Talking Time {name}</p>}
-
-        {/* <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={playerForm}
-            required
-            placeholder="Enter your first name"
-            onChange={e => setPlayerForm(e.target.value)}
-          />
-          <input type="submit" value="Get Player" />
-        </form> */}
+        {isReady ? readyForm() : <p>Trump trash talking time {name}!</p>}
       </nav>
     </header>
   );

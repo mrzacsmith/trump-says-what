@@ -19,8 +19,7 @@ const App = () => {
         // console.log(response.data);
         const item = response.data;
         setQuotes(item);
-        // Change isReady to true, display quote box and remove form
-        // setIsReady(false);
+
         // console.log("item", item.message);
       })
       .catch(error => {
