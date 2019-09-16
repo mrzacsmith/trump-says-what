@@ -6,7 +6,7 @@ import "./App.css";
 
 const App = () => {
   const [quotes, setQuotes] = useState([]);
-  const [player, setPlayer] = useState("Fred");
+  const [player, setPlayer] = useState("");
 
   useEffect(() => {
     axios
@@ -24,9 +24,16 @@ const App = () => {
       });
   }, []);
   // console.log("quote", quotes.message);
+
+  const addPlayer = player => {
+    setPlayer(player);
+  };
+
+  console.log("player", player);
+
   return (
     <div className="container">
-      <Header name={player} />
+      <Header name={player} addPlayer={addPlayer} />
       <QuoteDisplay quote={quotes.message} />
     </div>
   );

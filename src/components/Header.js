@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+// import GetPlayer from "./GetPlayer";
 
-const Header = props => {
+const Header = ({ addPlayer, name }) => {
+  const [playerForm, setPlayerForm] = useState("");
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(playerForm);
+    addPlayer(playerForm);
+  };
+
   return (
     <header>
       <nav>
-        <p>Welcome, {props.name}!</p>
+        <p>Welcome, {name}!</p>
+        <form onSubmit={handleSubmit}>
+          <label>Player Name:</label>
+          <input
+            type="text"
+            value={playerForm}
+            required
+            onChange={e => setPlayerForm(e.target.value)}
+          />
+          <input type="submit" value="Get Player" />
+        </form>
       </nav>
     </header>
   );
