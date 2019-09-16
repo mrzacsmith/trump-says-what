@@ -39,7 +39,7 @@ const App = () => {
   return (
     <div className="container">
       <Header name={player} addPlayer={addPlayer} isReady={isReady} />
-      <QuoteDisplay quote={quotes.message} />
+      <QuoteDisplay quote={quotes.message} isReady={isReady} />
     </div>
   );
 };
