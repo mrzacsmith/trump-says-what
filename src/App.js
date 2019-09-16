@@ -10,6 +10,7 @@ const App = () => {
   const [isReady, setIsReady] = useState(true);
 
   useEffect(() => {
+    // setIsReady(true);
     axios
       .get(
         `https://api.whatdoestrumpthink.com/api/v1/quotes/personalized?q=${player}`
@@ -19,7 +20,7 @@ const App = () => {
         const item = response.data;
         setQuotes(item);
         // Change isReady to true, display quote box and remove form
-
+        // setIsReady(false);
         // console.log("item", item.message);
       })
       .catch(error => {
@@ -30,6 +31,7 @@ const App = () => {
 
   const addPlayer = player => {
     setPlayer(player);
+    setIsReady(false);
   };
 
   // console.log("player", player);
