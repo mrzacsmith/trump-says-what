@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Header = ({ addPlayer, name, isReady }) => {
+const Header = ({ addPlayer, name, isReady, setIsReady }) => {
   const [playerForm, setPlayerForm] = useState("");
   const handleSubmit = e => {
     e.preventDefault();
@@ -33,12 +33,16 @@ const Header = ({ addPlayer, name, isReady }) => {
             <p>Trump trash talking time {name}!</p>
             <br />
             <button>More Trash</button>
-            <button>Reset</button>
+            <button onClick={() => window.location.reload(false)}>Reset</button>
           </div>
         )}
       </nav>
     </header>
   );
 };
+
+// function reloadPage() {
+//   window.location.reload(false)
+// }
 
 export default Header;

@@ -37,7 +37,12 @@ const App = () => {
 
   return (
     <div className="container">
-      <Header name={player} addPlayer={addPlayer} isReady={isReady} />
+      <Header
+        name={player}
+        addPlayer={addPlayer}
+        isReady={isReady}
+        setIsReady={setIsReady}
+      />
       <QuoteDisplay quote={quotes.message} isReady={isReady} />
     </div>
   );
