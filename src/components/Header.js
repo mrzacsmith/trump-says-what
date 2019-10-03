@@ -16,7 +16,7 @@ const Header = ({ addPlayer, name, isReady, setIsReady }) => {
           type="text"
           value={playerForm}
           required
-          placeholder="Enter your first name"
+          placeholder="Enter your name"
           onChange={e => setPlayerForm(e.target.value)}
         />
         <input type="submit" value="Let's talk!" />
