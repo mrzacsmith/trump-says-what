@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../App.css";
 
 const Header = ({ addPlayer, name, isReady, setIsReady }) => {
   const [playerForm, setPlayerForm] = useState("");
