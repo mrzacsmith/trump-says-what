@@ -26,7 +26,16 @@ const Header = ({ addPlayer, name, isReady }) => {
   return (
     <header>
       <nav>
-        {isReady ? readyForm() : <p>Trump trash talking time {name}!</p>}
+        {isReady ? (
+          readyForm()
+        ) : (
+          <div>
+            <p>Trump trash talking time {name}!</p>
+            <br />
+            <button>More Trash</button>
+            <button>Reset</button>
+          </div>
+        )}
       </nav>
     </header>
   );
