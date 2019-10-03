@@ -41,8 +41,4 @@ const Header = ({ addPlayer, name, isReady, setIsReady }) => {
   );
 };
 
-// function reloadPage() {
-//   window.location.reload(false)
-// }
-
 export default Header;
